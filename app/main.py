@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 with st.container():
 
     st.markdown("**:blue[Investment Calculator]**")
-    st.caption("💬 Calculate amount in investments after n years ")
+    st.caption("❓ Calculate amount in investments after n years ")
 
     col1, col2, col3, col4 = st.columns(4)
 
@@ -35,7 +35,7 @@ st.markdown("-----")
 with st.container():
 
     st.markdown("**:blue[Trading calculator]**")
-    st.caption("💬 Calculate amount in trading account after n months, trading\
+    st.caption("❓ Calculate amount in trading account after n months, trading\
                n times a month on a price difference eg. $1")
 
     col1, col2, col3, col4 = st.columns(4)
