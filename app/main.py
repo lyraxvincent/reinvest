@@ -35,8 +35,8 @@ st.markdown("-----")
 with st.container():
 
     st.markdown("**:blue[Trading calculator]**")
-    st.caption("💬 Calculate amount in trading account after n months, trading n times a month on a share\
-               price difference eg. 1 bob (selling at 1 bob higher and buying at 1 bob lower selling price)")
+    st.caption("💬 Calculate amount in trading account after n months, trading\
+               n times a month on a price difference eg. $1")
 
     col1, col2, col3, col4 = st.columns(4)
 
@@ -63,4 +63,4 @@ with st.container():
         for l in range(13):
             st.write(" ")
         st.caption(f"### Total shares after {N_MONTHS} months: **:green[{n_shares:,.2f}]**\
-                   \n###3Value in KShs: **:green[{value:,.2f}]**")
+                   \n### Value in KShs: **:green[{value:,.2f}]**")
