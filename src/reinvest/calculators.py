@@ -38,7 +38,8 @@ def trading_calculator(initial_capital: int,
                        average_share_price: float,
                        trading_difference: float,
                        n_months: int,
-                       trading_frequency: int) ->  Tuple[float, float]:
+                       trading_frequency: int,
+                       brokerage_fees: float) ->  Tuple[float, float]:
     """
     Calculate amount in trading account after n_months, trading n times a month on a share price difference eg. 1 bob
     (selling at 1 bob higher and buying at 1 bob lower selling price)
@@ -56,6 +57,8 @@ def trading_calculator(initial_capital: int,
 
         trading_frequency -- no. of times traded in a month
 
+        brokerage_fees -- percentage of brokerage fee on every transaction (buy & sell)
+
     Assumption: the average price per share does not change so much so we use the same price for all transactions
 
     Returns:
@@ -67,9 +70,11 @@ def trading_calculator(initial_capital: int,
 
     for _ in range(n_months):
 
-        monthly_profit = (trading_difference * trading_frequency) * total_shares
+        for _ in range(trading_frequency):
 
-        # profit back to shares
-        total_shares += (monthly_profit / average_share_price)
+            profit = trading_difference * total_shares
+            shares = (total_shares + (profit / average_share_price))
+            value = (shares * average_share_price) * (1 - (brokerage_fees/100))
+            total_shares = value/average_share_price
 
     return total_shares, total_shares*average_share_price
