@@ -43,12 +43,12 @@ with st.container():
     with col1:
 
         INITIAL_CAPITAL = st.number_input(label="Initial Capital", value=0)
-        STARTING_SHARE_PRICE = st.number_input(label="Starting Share Price", value=1)
-        AVERAGE_SHARE_PRICE = st.number_input(label="Average Share Price", value=1)
+        STARTING_SHARE_PRICE = st.number_input(label="Starting Share Price", value=30)
+        AVERAGE_SHARE_PRICE = st.number_input(label="Average Share Price", value=30)
         TRADING_DIFF = st.number_input(label="Trading Difference", value=1.0, step=.1)
         N_MONTHS = st.number_input(label="Number of Months", value=12)
         TRADING_FREQUENCY = st.number_input(label="No. of Trades to be Closed per Month", value=4)
-        BROKERAGE_FESS =st.number_input(label="Brokerage fees (%)", value=0.0, step=.1)
+        BROKERAGE_FESS =st.number_input(label="Brokerage Fees (% - Applied to both sell & buy trades)", value=2.0, step=.1)
 
     n_shares, value = trading_calculator(
         initial_capital=INITIAL_CAPITAL,

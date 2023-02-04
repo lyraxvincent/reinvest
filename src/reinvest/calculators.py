@@ -74,7 +74,8 @@ def trading_calculator(initial_capital: int,
 
             profit = trading_difference * total_shares
             shares = (total_shares + (profit / average_share_price))
-            value = (shares * average_share_price) * (1 - (brokerage_fees/100))
-            total_shares = value/average_share_price
+            value = (shares * average_share_price) * (1 - (brokerage_fees/100)) # selling fees
+            value_after_buy = value * (1 - (brokerage_fees/100)) # buying fees
+            total_shares = value_after_buy/average_share_price
 
     return total_shares, total_shares*average_share_price
