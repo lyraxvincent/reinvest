@@ -1,6 +1,6 @@
 ## **reinvest**
 
-Investment and trading calculator.
+Investment and trading calculator (Compounding).
 
 Easily access the calculators using streamlit frontend by cloning this repo and running:
 ```python

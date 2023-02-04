@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
 
 with st.container():
 
-    st.markdown("**:blue[Investment Calculator]**")
+    st.markdown("**:blue[Investment Calculator (Compounding)]**")
     st.caption("❓ Calculate amount in investments after n years ")
 
     col1, col2, col3, col4 = st.columns(4)
